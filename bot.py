@@ -54,18 +54,18 @@ class MergeBot(Client):
     def start(self):
         super().start()
         try:
-            self.send_message(chat_id=int(Config.OWNER), text="<b>Bᴏᴛ sᴛᴀʀᴛᴇᴅ .!</b>")
+            self.send_message(chat_id=int(Config.OWNER), text="<b>Bot Started!</b>")
         except Exception as err:
-            LOGGER.error("Bᴏᴏᴛ ᴀʟᴇʀᴛ ғᴀɪʟᴇᴅ! Pʟᴇᴀsᴇ sᴛᴀʀᴛ ʙᴏᴛ ɪɴ PM")
-        return LOGGER.info("Bᴏᴛ Sᴛᴀʀᴛᴇᴅ!")
+            LOGGER.error("Boot alert failed! Please start bot in PM")
+        return LOGGER.info("Bot Started!")
 
     def stop(self):
         super().stop()
-        return LOGGER.info("Bᴏᴛ Sᴛᴏᴘᴘᴇᴅ")
+        return LOGGER.info("Bot Stopped")
 
 
 mergeApp = MergeBot(
-    name=Config.SESSION_NAME,
+    name="merge-bot",
     api_hash=Config.API_HASH,
     api_id=Config.TELEGRAM_API,
     bot_token=Config.BOT_TOKEN,
